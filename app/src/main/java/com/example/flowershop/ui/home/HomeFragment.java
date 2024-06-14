@@ -57,7 +57,7 @@ public class HomeFragment extends Fragment {
         binding.btnLogin.setOnClickListener(v->{
             navController = Navigation.findNavController(requireActivity(),
                     R.id.nav_host);
-            navController.navigate(R.id.action_navigation_home_to_authFragment);
+            navController.navigate(R.id.action_navigation_home_to_loginFragment);
         });
     }
 
