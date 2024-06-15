@@ -1,5 +1,7 @@
 package com.example.flowershop.ui.home;
 
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,11 +25,12 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    FragmentHomeBinding binding;
     List<CategoryModel> list_category = new ArrayList<>();
     CategoryAdapter adapter;
     LottieAnimationView lotty_flowers;
     NavController navController;
+    String userName;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -35,9 +38,22 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+//----------------------------------------------------
+//        // Получение имени пользователя из Intent
+//        Intent intent = getIntent();
+//        userName = intent.getStringExtra("userName");
+//
+//        // Установка приветственного текста
+//        if (userName != null && !userName.isEmpty()) {
+//            binding.userName.setText( userName);
+//        } else {
+//            binding.userName.setText("");
+//        }
+//----------------------------------------------------
+
+
         lotty_flowers = binding.lottyFlowers;
         lotty_flowers.setAnimation(R.raw.flowers2);
-//2,3(so so),6
         createList();
         adapter = new CategoryAdapter();
         adapter.setMain_list(list_category);

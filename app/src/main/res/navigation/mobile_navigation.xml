@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_navigation_home_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_feedbacksFragment"
+            app:destination="@id/feedbacksFragment" />
     </fragment>
 
     <fragment
@@ -76,5 +79,19 @@
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFeedbackFragment"
+        android:name="com.example.flowershop.ui.addfeedback.AddFeedbackFragment"
+        android:label="fragment_add_feedback"
+        tools:layout="@layout/fragment_add_feedback" />
+    <fragment
+        android:id="@+id/feedbacksFragment"
+        android:name="com.example.flowershop.ui.feedbacks.FeedbacksFragment"
+        android:label="fragment_feedbacks"
+        tools:layout="@layout/fragment_feedbacks" >
+        <action
+            android:id="@+id/action_feedbacksFragment_to_addFeedbackFragment"
+            app:destination="@id/addFeedbackFragment" />
     </fragment>
 </navigation>
