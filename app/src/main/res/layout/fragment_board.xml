@@ -6,7 +6,7 @@
     tools:context=".ui.notifications.BoardFragment"
     android:orientation="vertical"
     android:padding="40dp"
-    android:background="#150A0A"
+    android:background="@color/white"
     >
 
     <androidx.viewpager2.widget.ViewPager2

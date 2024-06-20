@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageBoard"
-        android:layout_width="360dp"
-        android:layout_height="400dp"
+        android:layout_width="320dp"
+        android:layout_height="360dp"
         android:src="@drawable/boardflow"
         />
 
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:text="Добро пожаловать в наше приложение"
-        android:textSize="25sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:textAlignment="center"/>
 
@@ -27,7 +27,7 @@
         android:id="@+id/btnStart"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="5dp"
         app:cornerRadius="22dp"
         android:text="Start"
         android:textColor="@color/black"

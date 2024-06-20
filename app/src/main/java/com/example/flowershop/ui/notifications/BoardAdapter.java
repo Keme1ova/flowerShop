@@ -24,9 +24,9 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
             R.drawable.boardflow2,
             R.drawable.boardflow3};
     private String [] titles = new String[]  {
-            "Do you want travel?",
-            "Do you want travel?",
-            "Do you want travel?" };
+            "Welcome to Pearl!",
+            "Discover the beauty of nature in every bloom",
+            "Join us in celebrating most beautiful creations." };
     @NonNull
     @Override
     public BoardAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -65,7 +65,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
 
                 navController = Navigation.findNavController((Activity) itemView.getContext(),
                         R.id.nav_host);
-                navController.navigate(R.id.action_navigation_notifications_to_navigation_home);
+                navController.navigate(R.id.action_navigation_notifications_to_loginFragment);
             });
 
         }

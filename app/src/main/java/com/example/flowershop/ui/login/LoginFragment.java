@@ -23,6 +23,7 @@ public class LoginFragment extends Fragment {
     FragmentLoginBinding binding;
     private FirebaseAuth auth;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -48,21 +49,31 @@ public class LoginFragment extends Fragment {
             navController.navigate(R.id.action_loginFragment_to_registerFragment);
         });
 
+
         return binding.getRoot();
     }
 
     private void loginUser(String email, String password) {
-        auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(getActivity(), task -> {
-                    if (task.isSuccessful()) {
-                        navController = Navigation.findNavController(requireActivity(),
-                                R.id.nav_host);
-                        navController.navigate(R.id.action_loginFragment_to_navigation_home);
-                    } else {
-                        Toast.makeText(getContext(), "Login failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+        // Проверяем, является ли введенный email и пароль администраторскими учетными данными
+        if (email.equals("admin@gmail.com") && password.equals("adminadmin")) {
+            // Переходим на другую страницу для администратора
+            navController = Navigation.findNavController(requireActivity(), R.id.nav_host);
+            navController.navigate(R.id.action_loginFragment_to_adminPanelFragment);
+        } else {
+            // Иначе, проводим аутентификацию через Firebase
+            auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(getActivity(), task -> {
+                        if (task.isSuccessful()) {
+                            navController = Navigation.findNavController(requireActivity(),
+                                    R.id.nav_host);
+                            navController.navigate(R.id.action_loginFragment_to_navigation_home);
+                        } else {
+                            Toast.makeText(getContext(), "Login failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
     }
+
 
     @Override
     public void onDestroyView() {

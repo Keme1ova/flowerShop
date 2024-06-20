@@ -77,7 +77,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
                     case "Wedding":
                         navController = Navigation.findNavController((Activity) itemView.getContext(),
                                 R.id.nav_host);
-                        navController.navigate(R.id.action_navigation_home_to_houseplantsFragment);
+                        navController.navigate(R.id.action_navigation_home_to_weddingFragment);
 
                         break;
 
